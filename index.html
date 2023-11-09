@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <title>notes-app</title>
+
+</head>
+
+<body class="bg-blue-100">
+
+  <!--Enlace tutoial  https://www.youtube.com/watch?v=AkIUtUWpyZs -->
+
+  <!-- PopUp Box -->
+  <div class="popupBox invisible flex h-full w-full items-center mx-auto fixed 
+    justify-center top-0 bg-slate-900/50">
+
+    <div class="popup max-w-sm w-full">
+      <div class="content bg-blue-50 rounded w-full">
+
+        <header class="flex items-center
+                justify-between py-4 px-6 border-b-[1px]
+                text-xl font-medium text-slate-600 border-slate-300">
+          <p>Agregar una nueva nota</p>
+          <i class="iconClose fa-solid fa-xmark cursor-pointer"></i>
+        </header>
+
+        <form class="pt-4 px-6 pb-6">
+          <div>
+            <label class="block pb-1 text-xl font-medium text-slate-600">Titulo</label>
+            <input type="text" class="w-full py-1.5 px-2 outline-0 rounded border-[1px] border-slate-300">
+          </div>
+
+          <div>
+            <label class="block pt-2 text-xl font-medium text-slate-600">Descripción</label>
+            <textarea
+              class="w-full h-36 py-1 px-2 rounded outline-0 resize-none border-[1px] border-slate-300"></textarea>
+          </div>
+
+          <!-- Boton Agregar -->
+          <div class="submitNote flex items-center justify-between" name="submitNote" action="POST">
+            <button class="w-full bg-blue-200 py-2 mt-4
+                          rounded font-medium text-xl text-slate-600">Agregar</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  <!--End PopUp Box -->
+
+  <!-- contenedor Notas -->
+  <div class="wrapper grid grid-cols-[repeat(auto-fill,280px)] m-5 gap-4
+                list-none">
+
+    <!-- Nota de agragacion-->
+    <li class="newNote flex flex-col bg-blue-50 h-64 px-5 pt-4
+               rounded items-center justify-center cursor-pointer-none">
+
+      <div class="icon flex items-center border-2 border-dashed h-20 w-20
+                  rounded-full cursor-pointer border-blue-200">
+        <i class="newNote fa-solid fa-plus p-4 text-blue-200 text-5xl"></i>
+      </div>
+
+      <p class="text-xl text-blue-200 font-medium mt-2">Nueva nota</p>
+    </li>
+    <!--End Nota de agragacion-->
+
+    <!-- Nota  -->
+    <li class="note flex justify-between flex-col
+               bg-blue-50 h-64 px-5 pt-4 rounded">
+
+      <div class="details">
+        <p class="text-xl font-medium text-slate-600">Recordatorio de estudiar</p>
+        <span class="block">Esta es una nota recordatorio de que debo estudiar HTML y CSS con Tailwind.</span>
+      </div>
+
+      <!-- footer Nota -->
+      <div class="buttom-content flex justify-between my-3 pt-2.5 border-t-2">
+
+        <span class="text-sm">Junio 29, 2023</span>
+
+        <!-- opciones de Nota -->
+        <div class="settings group">
+          <i class="fa-solid fa-ellipsis text-xl"></i>
+
+          <ul class="menu absolute justify-between items-center
+                     bottom-0 bg-blue-50 px-1 py-1 right-0 bottom-6
+                     rounded shadow-md scale-0 group-hover:scale-100
+                     transition-transform origin-bottom-right">
+
+            <li class="border-none flex items-center justify-star
+                       h-8 px-3.5 py-4 rounded text-slate-600 cursor-pointer 
+                       bg-blue-50 hover:bg-blue-200 ">
+              <i class="fa-solid fa-pen pr-2 text-sm"></i>Editar
+            </li>
+
+            <li class="border-none flex items-center justify-star
+                       h-8 px-3.5 py-4 rounded text-slate-600 cursor-pointer 
+                       bg-blue-50 hover:bg-blue-200">
+              <i class="fa-solid fa-trash pr-2 text-sm"></i>Eliminar
+            </li>
+          </ul>
+
+        </div>
+        <!-- End opciones de Nota -->
+
+      </div>
+      <!-- End footer Nota -->
+
+    </li>
+    <!--End Nota -->
+
+  </div>
+  <!-- End contenedor Notas -->
+
+  <script src="app.js"></script>
+
+</body>
+
+</html>
