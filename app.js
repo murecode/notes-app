@@ -10,12 +10,14 @@ newNote.addEventListener("click", () => {
 });
 
 submitNote.addEventListener("click", e => {
-    e.preventDefault()
-    console.log("Nota creada")
+    e.preventDefault();
+    
+    console.log("Nota creada");
+
+    iconClose.click();
 });
 
 iconClose.addEventListener("click", ()=> {
     console.log("Cerrado")
-    // popupBox.classList.remove("opacity-1");
     popupBox.classList.add("invisible")
 });
