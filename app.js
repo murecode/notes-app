@@ -1,9 +1,9 @@
-const newNote = document.querySelector(".newNote");
-const popupBox = document.querySelector(".popupBox");
-const titleNote = document.querySelector(".titleNote");
-const descNote = document.querySelector(".descNote");
+const newNote    = document.querySelector(".newNote");
+const popupBox   = document.querySelector(".popupBox");
+const titleNote  = document.querySelector(".titleNote");
+const descNote   = document.querySelector(".descNote");
 const submitNote = document.querySelector(".submitNote");
-const iconClose = popupBox.querySelector(".iconClose");
+const iconClose  = popupBox.querySelector(".iconClose");
 
 const months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
 const weekDays = ["Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"];
@@ -18,6 +18,7 @@ newNote.addEventListener("click", () => {
 
 submitNote.addEventListener("click", e => {
   e.preventDefault();
+  location.reload(); // actualiza el navegador automaticamente
   let title = titleNote.value;
   let desc = descNote.value;
   console.log(title, desc);
@@ -36,7 +37,7 @@ submitNote.addEventListener("click", e => {
       date: `${month} ${day} ${year}`
     }
 
-    notes.push(note)
+    notes.push(note);
 
     localStorage.setItem("notes", JSON.stringify(notes));
 
