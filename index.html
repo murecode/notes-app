@@ -26,7 +26,7 @@
         <header class="flex items-center
                 justify-between py-4 px-6 border-b-[1px]
                 text-xl font-medium text-slate-600 border-slate-300">
-          <p>Agregar una nueva nota</p>
+          <p class="popupBox-title">Agregar nueva nota</p>
           <i class="iconClose fa-solid fa-xmark cursor-pointer"></i>
         </header>
 
@@ -44,7 +44,7 @@
 
           <!-- Boton Agregar -->
           <div class="submitNote flex items-center justify-between" name="submitNote" action="POST">
-            <button class="w-full bg-blue-200 py-2 mt-4
+            <button class="submit-btn w-full bg-blue-200 py-2 mt-4
                           rounded font-medium text-xl text-slate-600">Agregar</button>
           </div>
         </form>
@@ -54,28 +54,30 @@
   </div>
   <!--End PopUp Box -->
 
-  <!-- contenedor Notas -->
-  <div class="wrapper grid grid-cols-[repeat(auto-fill,280px)] m-4 gap-4 list-none">
-
-    <!-- Nota de agragacion-->
-    <li class="newNote flex flex-col bg-blue-50 h-64
-               rounded-lg items-center justify-center cursor-pointer-none">
-
-      <div class="icon flex items-center border-2 border-dashed h-20 w-20
-                  rounded-full cursor-pointer border-blue-200">
-        <i class="newNote fa-solid fa-plus p-4 text-blue-200 text-5xl"></i>
+  <section class="px-4 h-auto py-4">
+  
+    <!-- contenedor Notas -->
+    <!-- <div class="wrapper grid grid-cols-[repeat(auto-fill,280px)] m-4 gap-4 list-none"> -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-4">
+  
+      <!-- Nota para agragacion-->
+      <div class="newNote flex flex-col bg-blue-50 h-64
+                 rounded-lg items-center justify-center cursor-pointer">
+  
+        <div class="icon flex items-center border-2 border-dashed h-20 w-20
+                    rounded-full cursor-pointer border-blue-200">
+          <i class="newNote fa-solid fa-plus p-4 text-blue-200 text-5xl"></i>
+        </div>
+  
+        <p class="text-xl text-blue-200 font-medium mt-2">Nueva nota</p>
       </div>
+      <!--End Nota de agragacion-->
+  
+    </div>
+    <!-- End contenedor Notas -->
 
-      <p class="text-xl text-blue-200 font-medium mt-2">Nueva nota</p>
-    </li>
-    <!--End Nota de agragacion-->
-
-    <!-- Nota  -->
-    
-    <!--End Nota -->
-
-  </div>
-  <!-- End contenedor Notas -->
+  </section>
+  
 
   <script src="app.js"></script>
 
